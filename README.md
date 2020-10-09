@@ -20,8 +20,8 @@
 ❯ cd websocket-python/
 ❯ python3 -m venv .websocket
 ❯ source .websocket/bin/activate (linux) ou .websocket\Scripts\activate (windows)
-❯ python server.py
-❯ python client.py
+❯ python3 server.py
+❯ python3 client.py
   # http://127.0.0.1/
   # escreva uma mensagem...
 ```
