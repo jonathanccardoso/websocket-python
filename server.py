@@ -1,4 +1,4 @@
-import socket, psutil
+import socket, psutil, os
 
 # host = 'http://127.0.0.1/'
 # host = socket.gethostname()
@@ -26,9 +26,19 @@ print("Aguardando mensagem...")
 
 
 def shows_ram_memory():
+  # psutil: Cross-platform lib for process and system monitoring in Python.
   memory = psutil.virtual_memory()
   print('Memória Total', memory.total / (1024*1024*1024))
   print('Memória Usada', memory.used / (1024*1024*1024))
+
+def files_direct():
+  os.system("ls")
+
+def clear():
+  os.system("clear")
+
+def top_process():
+  os.system("top")
 
 
 # aguarda um dado enviado pela rede de até 1024 Bytes
@@ -40,7 +50,13 @@ while conditional:
   
   if message_receive == 'exit':
     conditional = False
-    # serv_socket.close() # not working!
+    # serv_socket.close() # not working in this condiction!
   elif message_receive == '1':
     mem = shows_ram_memory()
     con.send(str(mem).encode()) # send message!
+  elif message_receive == '2':
+    files_direct()
+  elif message_receive == '3':
+    clear()
+  elif message_receive == '4':
+    top_process()

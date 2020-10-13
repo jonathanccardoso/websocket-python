@@ -12,6 +12,13 @@ except Exception as erro:
   print("Error", str(erro))
 
 while True:
+  print("==================")
+  print("| (1): Memória    |")
+  print("| (2): Diretórios |")
+  print("| (3): Limpar     |")
+  print("| (4): Processos  |")
+  print("| (exit): Sair    |")
+  print("==================")
   message = input("Digite uma mensagem para enviar ao servidor: ")
 
   # sends the data to the server
