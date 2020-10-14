@@ -1,4 +1,6 @@
-import socket, psutil, os
+import socket
+import psutil
+import os
 
 # host = 'http://127.0.0.1/'
 # host = socket.gethostname()
@@ -19,10 +21,10 @@ serv_socket.bind(addr)
 # limit connections
 serv_socket.listen(10)
 
-print('Aguardando conexao...')
-con, client = serv_socket.accept()
-print('Conectado!')
-print("Aguardando mensagem...")
+# print('Aguardando conexao...')
+# con, client = serv_socket.accept()
+# print('Conectado!')
+# print("Aguardando mensagem...")
 
 
 def shows_ram_memory():
@@ -44,19 +46,25 @@ def top_process():
 # aguarda um dado enviado pela rede de até 1024 Bytes
 conditional = True
 while conditional:
-  receive = con.recv(1024)
-  message_receive = receive.decode('utf8').strip()
-  print("Mensagem recebida:", message_receive)
-  
-  if message_receive == 'exit':
-    conditional = False
-    # serv_socket.close() # not working in this condiction!
-  elif message_receive == '1':
-    mem = shows_ram_memory()
-    con.send(str(mem).encode()) # send message!
-  elif message_receive == '2':
-    files_direct()
-  elif message_receive == '3':
-    clear()
-  elif message_receive == '4':
-    top_process()
+    print('Aguardando conexao...')
+    con, client = serv_socket.accept()
+    print('Conectado!')
+    print("Aguardando mensagem...")
+    while conditional:
+        receive = con.recv(1024)
+        message_receive = receive.decode('utf8').strip()
+        print("Mensagem recebida:", message_receive)
+
+        if message_receive == 'exit':
+          conditional = False
+          # serv_socket.close() # not working in this condiction!
+        elif message_receive == '1':
+          mem = shows_ram_memory()
+          con.send(str(mem).encode()) # send message!
+        elif message_receive == '2':
+          files_direct()
+        elif message_receive == '3':
+          clear()
+        elif message_receive == '4':
+          top_process()
+    con.close()

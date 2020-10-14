@@ -2,7 +2,7 @@ import socket
 
 ip = input('Digite o ip de conexao: ')
 port = 7000
-addr = ((ip, port))
+addr = (ip, port)
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
