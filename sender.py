@@ -1,6 +1,7 @@
 from socket import *
 import sys
 
+# AF_INET - Internet; SOCK_DGRAM - UDP
 s = socket(AF_INET, SOCK_DGRAM)
 
 try:

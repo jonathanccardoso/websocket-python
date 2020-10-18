@@ -1,6 +1,5 @@
 from socket import *
-import sys
-# import select
+import sys, os
 
 host = gethostbyname("localhost")
 port = 7000
@@ -12,14 +11,26 @@ buf = 1024
 
 print("Waiting received File...")
 
+try:
+  os.mkdir("download")
+except:
+  pass
+
+folder_download = os.getcwd() + "/download"
+
 data, addr = s.recvfrom(buf)
 print("Received File:", data.strip())
-f = open(data.strip(), 'wb')
+
+new_file = folder_download +"/"+ str(data.decode('utf-8'))
+
+# f = open(data.strip(), "wb")
+# f = open(folder_download / data.strip(), "wt")
+f = open(new_file, "wt")
 
 data, addr = s.recvfrom(buf)
 try:
   while(data):
-    f.write(data)
+    f.write(data.decode('utf-8'))
     s.settimeout(2)
     data, addr = s.recvfrom(buf)
 except timeout:

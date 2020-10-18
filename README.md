@@ -12,7 +12,7 @@
   - Implementações que utilizam TCP/UDP como base (ex: HTTP) não são aceitos para essa tarefa
 - Avaliação em dupla
 - Estudo de caso de livre escolha
-  - Exemplos possíveis: transmissão de arquivo (texto,imagem, vídeo), implementação de um jogo simples entre players remotos, sistemas de gerenciamento de contas online, etc.
+  - Exemplos possíveis: transmissão de arquivo (texto, imagem, vídeo), implementação de um jogo simples entre players remotos, sistemas de gerenciamento de contas online, etc.
 
 ## Desenvolvimento
 
