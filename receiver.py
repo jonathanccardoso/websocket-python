@@ -25,6 +25,8 @@ new_file = folder_download +"/"+ str(data.decode('utf-8'))
 
 # f = open(data.strip(), "wb")
 # f = open(folder_download / data.strip(), "wt")
+
+# wt: open for writing, truncating the file first in mode text
 f = open(new_file, "wt")
 
 data, addr = s.recvfrom(buf)
