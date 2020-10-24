@@ -8,8 +8,8 @@
 
 ### Regras
 
-- O protocolo de transmissão deve ser TCP/UDP
-  - Implementações que utilizam TCP/UDP como base (ex: HTTP) não são aceitos para essa tarefa
+- O protocolo de transmissão deve ser UDP
+  - Implementações que utilizam UDP como base (ex: HTTP) não são aceitos para essa tarefa
 - Avaliação em dupla
 - Estudo de caso de livre escolha
   - Exemplos possíveis: transmissão de arquivo (texto, imagem, vídeo), implementação de um jogo simples entre players remotos, sistemas de gerenciamento de contas online, etc.
@@ -20,8 +20,15 @@
 
 Instalações
 
-    ....
-    ....
+    > sudo apt update
+    > sudo apt install libc-dev-bin
+    > sudo apt install make
+    > sudo apt install g++
+    > make -f Makefile.teste
+    > sudo apt install rpcbind
+
+    > nano calculadora.x
+    > rpcgen -C calculadora.x
 
 Compilar
 

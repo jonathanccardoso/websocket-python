@@ -3,7 +3,7 @@
  * It was generated using rpcgen.
  */
 
-#include "calculadora.h"
+#include "fatorial.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <rpc/pmap_clnt.h>
@@ -17,11 +17,10 @@
 #endif
 
 static void
-soma_sub_prog_1(struct svc_req *rqstp, register SVCXPRT *transp)
+fatorial_prog_2(struct svc_req *rqstp, register SVCXPRT *transp)
 {
 	union {
-		operandos soma_1_arg;
-		operandos subtracao_1_arg;
+		operando soma_2_arg;
 	} argument;
 	char *result;
 	xdrproc_t _xdr_argument, _xdr_result;
@@ -33,15 +32,9 @@ soma_sub_prog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		return;
 
 	case SOMA:
-		_xdr_argument = (xdrproc_t) xdr_operandos;
+		_xdr_argument = (xdrproc_t) xdr_operando;
 		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) soma_1_svc;
-		break;
-
-	case SUBTRACAO:
-		_xdr_argument = (xdrproc_t) xdr_operandos;
-		_xdr_result = (xdrproc_t) xdr_int;
-		local = (char *(*)(char *, struct svc_req *)) subtracao_1_svc;
+		local = (char *(*)(char *, struct svc_req *)) soma_2_svc;
 		break;
 
 	default:
@@ -69,15 +62,15 @@ main (int argc, char **argv)
 {
 	register SVCXPRT *transp;
 
-	pmap_unset (SOMA_SUB_PROG, SOMA_SUB_VERSION);
+	pmap_unset (FATORIAL_PROG, FATORIAL_VERSION);
 
 	transp = svcudp_create(RPC_ANYSOCK);
 	if (transp == NULL) {
 		fprintf (stderr, "%s", "cannot create udp service.");
 		exit(1);
 	}
-	if (!svc_register(transp, SOMA_SUB_PROG, SOMA_SUB_VERSION, soma_sub_prog_1, IPPROTO_UDP)) {
-		fprintf (stderr, "%s", "unable to register (SOMA_SUB_PROG, SOMA_SUB_VERSION, udp).");
+	if (!svc_register(transp, FATORIAL_PROG, FATORIAL_VERSION, fatorial_prog_2, IPPROTO_UDP)) {
+		fprintf (stderr, "%s", "unable to register (FATORIAL_PROG, FATORIAL_VERSION, udp).");
 		exit(1);
 	}
 
@@ -86,8 +79,8 @@ main (int argc, char **argv)
 		fprintf (stderr, "%s", "cannot create tcp service.");
 		exit(1);
 	}
-	if (!svc_register(transp, SOMA_SUB_PROG, SOMA_SUB_VERSION, soma_sub_prog_1, IPPROTO_TCP)) {
-		fprintf (stderr, "%s", "unable to register (SOMA_SUB_PROG, SOMA_SUB_VERSION, tcp).");
+	if (!svc_register(transp, FATORIAL_PROG, FATORIAL_VERSION, fatorial_prog_2, IPPROTO_TCP)) {
+		fprintf (stderr, "%s", "unable to register (FATORIAL_PROG, FATORIAL_VERSION, tcp).");
 		exit(1);
 	}
 
