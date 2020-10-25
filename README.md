@@ -16,35 +16,18 @@
 
 ## Desenvolvimento
 
-- RPCGEN
-
-Instalações
-
-    > sudo apt update
-    > sudo apt install libc-dev-bin
-    > sudo apt install make
-    > sudo apt install g++
-    > make -f Makefile.teste
-    > sudo apt install rpcbind
-
-    > nano calculadora.x
-    > rpcgen -C calculadora.x
-
-Compilar
-
-    cc servidor.c calculadora_svc.c calculadora_xdr.c -o servidor -lnsl
-    cc cliente.c calculadora_clnt.c calculadora_xdr.c -o cliente -lnsl
+> RPCGEN
 
 - Server
 
 ```console
 ❯ cd websocket-python/
-❯ ./servidor
+❯ python3 server.py localhost
 ```
 
 - Cliente
 
 ```console
 ❯ cd websocket-python/
-❯ ./cliente localhost 7 4
+❯ python3 client.py
 ```
