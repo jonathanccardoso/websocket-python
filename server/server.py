@@ -4,8 +4,8 @@ import xmlrpc.client, os
 def sayHello():
     return 'Hello World From XMLRPCServer'
 
-def enviaArquivo():
-     with open("starwars.jpg", "rb") as handle:
+def enviaArquivo(arquivo):
+     with open(arquivo, "rb") as handle:
         return xmlrpc.client.Binary(handle.read())
 
 def lerArquivo(file_name):
