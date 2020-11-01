@@ -1,70 +1,26 @@
-import socket
-import psutil
-import os
+from datetime import datetime
 
-# host = 'http://127.0.0.1/'
-# host = socket.gethostname()
-host = socket.gethostbyname("localhost")
-print("host", host)
-
-port = 7000
-addr = (host, port)
-
-# AF_INET que declara a família do protocolo.
-# SOCKET_STREAM, indica que será TCP/IP.
-serv_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
-serv_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-# qual IP e porta o servidor deve aguardar a conexão.
-serv_socket.bind(addr)
-
-# limit connections
-serv_socket.listen(10)
-
-# print('Aguardando conexao...')
-# con, client = serv_socket.accept()
-# print('Conectado!')
-# print("Aguardando mensagem...")
+import Pyro4
 
 
-def shows_ram_memory():
-  # psutil: Cross-platform lib for process and system monitoring in Python.
-  memory = psutil.virtual_memory()
-  print('Memória Total', memory.total / (1024*1024*1024))
-  print('Memória Usada', memory.used / (1024*1024*1024))
+@Pyro4.expose
+class Chat(object):
+  def send_message(self, text):
+    now = datetime.now()
+    print(f'{text} - received at {now:%H:%M:%S} \n')
 
-def files_direct():
-  os.system("ls")
+def start_server():
+  daemon = Pyro4.Daemon()
+  ns = Pyro4.locateNS()
+  uri = daemon.register(Chat) # register the Chat as a Pyro object
+  ns.register('chat.server', str(uri)) # register the object with a name in the name server
+  print(f'Ready to listen...')
+  daemon.requestLoop()
 
-def clear():
-  os.system("clear")
 
-def top_process():
-  os.system("top")
-
-
-# aguarda um dado enviado pela rede de até 1024 Bytes
-conditional = True
-while conditional:
-    print('Aguardando conexao...')
-    con, client = serv_socket.accept()
-    print('Conectado!')
-    print("Aguardando mensagem...")
-    while conditional:
-        receive = con.recv(1024)
-        message_receive = receive.decode('utf8').strip()
-        print("Mensagem recebida:", message_receive)
-
-        if message_receive == 'exit':
-          conditional = False
-          # serv_socket.close() # not working in this condiction!
-        elif message_receive == '1':
-          mem = shows_ram_memory()
-          con.send(str(mem).encode()) # send message!
-        elif message_receive == '2':
-          files_direct()
-        elif message_receive == '3':
-          clear()
-        elif message_receive == '4':
-          top_process()
-    con.close()
+if __name__ == '__main__':
+  try:
+    start_server()
+  except (KeyboardInterrupt, EOFError):
+    print('Bye!')
+exit

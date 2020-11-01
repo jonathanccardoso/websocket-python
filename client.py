@@ -1,29 +1,24 @@
-import socket
+from datetime import datetime
 
-ip = input('Digite o ip de conexao: ')
-port = 7000
-addr = (ip, port)
+import Pyro4
 
-client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-try:
-  client_socket.connect(addr)
-except Exception as erro:
-  print("Error", str(erro))
+server = Pyro4.Proxy(f"PYRONAME:chat.server") # use name server object lookup uri shortcut
 
-while True:
-  print("==================")
-  print("| (1): Memória    |")
-  print("| (2): Diretórios |")
-  print("| (3): Limpar     |")
-  print("| (4): Processos  |")
-  print("| (exit): Sair    |")
-  print("==================")
-  message = input("Digite uma mensagem para enviar ao servidor: ")
+def start_chatting():
+  text = ''
+  while (text != 'exit'):
+    text = input("... ")
+    now = datetime.now()
+    server.send_message(text)
+    
+    print(f'Sent at \n')
+    # print(f'sent at {now:%H:%M:%S} \n')
 
-  # sends the data to the server
-  client_socket.send(message.encode())
-  print('Mensagem enviada!')
 
-  # serves to close the connection between the two applications
-  # client_socket.close()
+if __name__ == '__main__':
+  try:
+    start_chatting()
+  except (KeyboardInterrupt, EOFError):
+    print('Bye!')
+exit
