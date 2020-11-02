@@ -3,17 +3,24 @@ from datetime import datetime
 import Pyro4
 
 
+# Decorator on the class definition to tell Pyro it is allowed to access the class remotely.
 @Pyro4.expose
 class Chat(object):
   def send_message(self, text):
     now = datetime.now()
-    print(f'{text} - received at {now:%H:%M:%S} \n')
+    print(f'{text} - Received at {now:%H:%M:%S} \n')
+
+  def download(self, file_name):
+    print("Conteúdo do arquivo"+ file_name +"\n")
+    # return open(file_name, "rb").read()
+
 
 def start_server():
-  daemon = Pyro4.Daemon()
-  ns = Pyro4.locateNS()
+  daemon = Pyro4.Daemon() # This is the part that listens for remote method calls, dispatches to actual objects
+  ns = Pyro4.locateNS() # Get a proxy for a name server somewhere in the network. If you’re not providing host or port arguments, the configured defaults are used.
   uri = daemon.register(Chat) # register the Chat as a Pyro object
   ns.register('chat.server', str(uri)) # register the object with a name in the name server
+
   print(f'Ready to listen...')
   daemon.requestLoop()
 
