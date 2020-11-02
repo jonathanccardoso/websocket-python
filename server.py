@@ -1,6 +1,7 @@
 from datetime import datetime
 
 import Pyro4
+import os
 
 
 # Decorator on the class definition to tell Pyro it is allowed to access the class remotely.
@@ -13,15 +14,15 @@ class Chat(object):
   def download(self, file_name):
     print("Conteúdo do arquivo")
     print("file_name", file_name)
-    # return open(file_name, "rb").read()
 
-    # # f = open(file_name)
+    folder_download = os.getcwd() + "/download"
+    new_file = folder_download +"/"+ file_name
+
     f = open(file_name, 'rb')
-    context = f.read()
-    return context
-
-    # with open(file_name, "rb") as handle:
-    #   return handle.read()
+    
+    context = str(f.read())
+    
+    return str(context)
 
 
 def start_server():

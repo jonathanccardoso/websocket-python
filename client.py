@@ -11,8 +11,6 @@ def start_chatting():
   text = ''
   while (text != 'exit'):
     print("Envie mensagens... \nSe quiser fazer download de algum arquivo escreva Download")
-
-    # text = input("... ")
     text = input("❯ ") 
     now = datetime.now()
 
@@ -21,27 +19,22 @@ def start_chatting():
     if 'download' in text.lower():
       file_name = input("Digite o nome do arquivo: ")
       
-      # folder_download = os.getcwd() + "/download"
-      # new_file = folder_download +"/"+ file_name
-      # print("new_file", new_file)
+      folder_download = os.getcwd() + "/download"
+      new_file = folder_download +"/"+ file_name
 
       # output_file = open(file_name, "wb")
       # output_file.write(server.download(file_name))
       # output_file.write(server.download(file_name).encode("ascii", "replace", "utf-8"))
       # output_file.write(server.download(file_name)).encode("ascii", "replace", "utf-8")
       # output_file.write(b'sdasdad').encode("ascii", "replace", "utf-8")
-      # output_file.write(b'sdasdad')
+      # output_file.write(b'sdasdad')      
+      # output_file.close()
 
-      # with open(file_name, "wb") as handle:
       with open(new_file, "wb") as handle:
         handle.write(server.download(file_name).encode("utf-8"))
-        # handle.write(server.download(file_name).data)
+        # handle.write(server.download(file_name))
         # handle.write(b"sdda")
 
-      # output_file.close()
-      
-      # # for debug
-      # server.download(file_name)
       print("Downloaded file: {}".format(file_name))
     
     print(f'Sent \n')
