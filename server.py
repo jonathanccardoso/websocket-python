@@ -16,12 +16,12 @@ class Chat(object):
     # return open(file_name, "rb").read()
 
     # # f = open(file_name)
-    # f = open(file_name, 'rb')
-    # context = f.read()
-    # return context
+    f = open(file_name, 'rb')
+    context = f.read()
+    return context
 
-    with open(file_name, "rb") as handle:
-      return handle.read()
+    # with open(file_name, "rb") as handle:
+    #   return handle.read()
 
 
 def start_server():

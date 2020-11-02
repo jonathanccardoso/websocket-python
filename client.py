@@ -33,14 +33,15 @@ def start_chatting():
       # output_file.write(b'sdasdad')
 
       # with open(file_name, "wb") as handle:
-      # with open(new_file, "wb") as handle:
-      #   # handle.write(server.download(file_name).data)
-      #   handle.write(server.download(file_name).encode("utf-8"))
+      with open(new_file, "wb") as handle:
+        handle.write(server.download(file_name).encode("utf-8"))
+        # handle.write(server.download(file_name).data)
         # handle.write(b"sdda")
 
       # output_file.close()
       
-      server.download(file_name)
+      # # for debug
+      # server.download(file_name)
       print("Downloaded file: {}".format(file_name))
     
     print(f'Sent \n')
