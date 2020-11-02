@@ -11,8 +11,17 @@ class Chat(object):
     print(f'{text} - Received at {now:%H:%M:%S} \n')
 
   def download(self, file_name):
-    print("Conteúdo do arquivo"+ file_name +"\n")
+    print("Conteúdo do arquivo")
+    print("file_name", file_name)
     # return open(file_name, "rb").read()
+
+    # # f = open(file_name)
+    # f = open(file_name, 'rb')
+    # context = f.read()
+    # return context
+
+    with open(file_name, "rb") as handle:
+      return handle.read()
 
 
 def start_server():

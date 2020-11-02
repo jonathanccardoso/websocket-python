@@ -21,21 +21,29 @@ def start_chatting():
     if 'download' in text.lower():
       file_name = input("Digite o nome do arquivo: ")
       
-      folder_download = os.getcwd() + "/download"
-      new_file = folder_download +"/"+ file_name
-      print("new_file", new_file)
+      # folder_download = os.getcwd() + "/download"
+      # new_file = folder_download +"/"+ file_name
+      # print("new_file", new_file)
 
-      # output_file = open(new_file, "wb")
+      # output_file = open(file_name, "wb")
       # output_file.write(server.download(file_name))
+      # output_file.write(server.download(file_name).encode("ascii", "replace", "utf-8"))
+      # output_file.write(server.download(file_name)).encode("ascii", "replace", "utf-8")
+      # output_file.write(b'sdasdad').encode("ascii", "replace", "utf-8")
+      # output_file.write(b'sdasdad')
 
-      with open(new_file, "wb") as handle:
-        # handle.write(server.download(file_name).data)
-        handle.write(server.download(file_name))
+      # with open(file_name, "wb") as handle:
+      # with open(new_file, "wb") as handle:
+      #   # handle.write(server.download(file_name).data)
+      #   handle.write(server.download(file_name).encode("utf-8"))
+        # handle.write(b"sdda")
 
-      output_file.close()
+      # output_file.close()
+      
+      server.download(file_name)
       print("Downloaded file: {}".format(file_name))
     
-    print(f'Sent at \n')
+    print(f'Sent \n')
 
 
 if __name__ == '__main__':
