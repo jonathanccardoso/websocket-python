@@ -2,17 +2,9 @@
 
 > Atividade Referente a Disciplina de Desenvolvimento de Sistemas Distribuídos.
 
-## Atividade
+## SOAP
 
-- Meta: implementar, por meio de um estudo de caso, a transmissão de dados com protocolo TCP
 
-### Regras
-
-  - O protocolo de transmissão deve ser TCP
-    - Implementações que utilizam TCP como base (ex: HTTP) não são aceitos para essa tarefa
-  - Avaliação em dupla
-  - Estudo de caso de livre escolha
-    - Exemplos possíveis: transmissão de arquivo (texto,imagem, vídeo), implementação de um jogo simples entre players remotos, sistemas de gerenciamento de contas online, etc.
 
 ## Desenvolvimento
 
@@ -28,4 +20,4 @@
 
 ## Links
 
-- [socket python](https://www.alura.com.br/artigos/entendendo-socket-no-python-criando-um-bot-de-irc)
+- [link](#)

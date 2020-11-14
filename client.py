@@ -1,29 +1,26 @@
-import socket
+# ==== it`s ok ====
 
-ip = input('Digite o ip de conexao: ')
-port = 7000
-addr = (ip, port)
+# import zeep
 
-client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# wsdl = 'https://apphom.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl'
+# client = zeep.Client(wsdl=wsdl)
 
-try:
-  client_socket.connect(addr)
-except Exception as erro:
-  print("Error", str(erro))
+# while True:
+#     print("============= Consulta de CEP =============")
+#     cep = input("Digite um CEP válido para consulta: ")
+#     try:
+#         print(client.service.consultaCEP(cep))
+#     except Exception as err:
+#         print("CEP inválido", str(err))
+#         continue
 
-while True:
-  print("==================")
-  print("| (1): Memória    |")
-  print("| (2): Diretórios |")
-  print("| (3): Limpar     |")
-  print("| (4): Processos  |")
-  print("| (exit): Sair    |")
-  print("==================")
-  message = input("Digite uma mensagem para enviar ao servidor: ")
 
-  # sends the data to the server
-  client_socket.send(message.encode())
-  print('Mensagem enviada!')
+cliente = SOAPProxy('http://localhost:5000/server.php')
 
-  # serves to close the connection between the two applications
-  # client_socket.close()
+a = int(input("Digite o valor de a: "))
+b = int(input("Digite o valor de b: "))
+
+print(cliente.soma(a,b))
+print(cliente.subtracao(a,b))
+print(cliente.multiplicacao(a,b))
+print(cliente.divisao(a,b))
