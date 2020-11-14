@@ -1,5 +1,8 @@
 import sys
-from omniORB import CORBA
+# from omniORB import CORBA
+
+import CORBA, Fortune
+# , Fortune_ _POA
 import CosNaming, PortableServer
 from HelloServant import HelloServant
 
@@ -48,8 +51,8 @@ try:
     # context.bind(path, ref)
     rootContext.bind(path, ref)
     print("Bound the hello object to the naming service")
-
-except CosNaming.NamingContext.AlreadyBound, ex:
+# except CosNaming.NamingContext.AlreadyBound, ex:
+except CosNaming.NamingContext.AlreadyBound:
     print("Hello object already bound, rebinding new object")
     # context.rebind(path, ref)
     rootContext.rebind(path, ref)
