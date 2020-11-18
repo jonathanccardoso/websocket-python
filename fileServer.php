@@ -12,7 +12,6 @@
         public function multiplicacao($a, $b){
             return $a*$b;
         }
-
     }
 
     // server
@@ -23,7 +22,9 @@
     //null is wsdl
     $server = new SoapServer (null, $parametros);
     $server->setObject(new server());
-    
+        
     //server to get URL
     $server->handle();
-    
+
+    print("Run server...");
+
