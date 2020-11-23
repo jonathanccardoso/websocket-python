@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 
+from decouple import config
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +28,7 @@ SECRET_KEY = 'l0pw+*3!*3&^ff!f7n8&!jnx_bl=-@*z5yy@4e6a%xxahc*amc'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+ACCESS_TOKEN = config('ACCESS_TOKEN')
 
 # Application definition
 

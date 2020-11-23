@@ -11,6 +11,7 @@ from rest_framework import renderers
 from rest_framework import status
 
 from django.http import HttpResponse, JsonResponse
+from django.conf import settings
 
 import requests, json, locale
 
@@ -53,11 +54,20 @@ class UserViewSet(viewsets.ModelViewSet):
 
 class GithubViewSet(APIView):
   def get(self, request, username):
-    # api cep 
-    # https://viacep.com.br/ws/59075-000/json/
 
-    queryset = requests.get("https://api.github.com/users/" + username) #.content
-    # print("queryset", json.dumps(queryset))
+    headers = {'Authorization': 'access_token '+ settings.ACCESS_TOKEN +''}
+    queryset = requests.get("https://api.github.com/users/" + username, headers=headers).json()
+
+    response = renderers.JSONRenderer().render(
+      queryset, 'application/json'
+    )
+
+    return HttpResponse(response, content_type='application/json')
+
+
+class ZipCodeViewSet(APIView):
+  def get(self, request, zipcode):
+    queryset = requests.get("https://viacep.com.br/ws/"+ zipcode +"/json/").json()
 
     response = renderers.JSONRenderer().render(
       queryset, 'application/json'

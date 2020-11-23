@@ -11,6 +11,7 @@ router.register(r'users', api_views.UserViewSet)
 urlpatterns = [
     path('api/', include(router.urls)),
     path('api/user/github/<str:username>', api_views.GithubViewSet.as_view()),
+    path('api/user/zipcode/<str:zipcode>', api_views.ZipCodeViewSet.as_view()),
     path('api-auth/', include('rest_framework.urls')),
     path('admin/', admin.site.urls),
 ]

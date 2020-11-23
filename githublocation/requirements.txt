@@ -36,6 +36,7 @@ pyodbc==4.0.22
 pyparsing==2.2.0
 pysqlite==2.7.0
 python-dateutil==2.7.3
+python-decouple==3.3
 pytz==2019.2
 pyxdg==0.25
 requests==2.25.0
