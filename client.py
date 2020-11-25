@@ -32,7 +32,7 @@
 import SOAPpy
 
 # server = SOAPpy.SOAPProxy("http://localhost:8080/")
-server = SOAPpy.SOAPProxy('http://localhost/fileServer.php')
+server = SOAPpy.SOAPProxy('http://localhost/fileServer.php?wsdl')
 
 a = 0
 b = 0
