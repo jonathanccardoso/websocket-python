@@ -5,8 +5,8 @@
 <<<<<<< HEAD
 ## SOAP
 
-SOAP é um protocolo para troca de informações estruturadas em uma plataforma descentralizada e distribuída. Ele se baseia na Linguagem de Marcação Extensível (XML) para seu formato de mensagem, e normalmente baseia-se em outros protocolos da camada de aplicação.
 
+<<<<<<< HEAD
 ![SOAP](https://upload.wikimedia.org/wikipedia/commons/5/59/SOAP.svg)
 
 SOAP pode formar a camada base de uma pilha de protocolos de serviços Web, fornecendo um arcabouço básico de mensagens sob o qual se podem construir os serviços Web.
@@ -47,6 +47,8 @@ O Corba prover a persistência, definindo o Persistent Object Service (POS), par
 - Serviços de Persistência de Dados (Persistent Data Services (PDSs))
 - Base de Dados (Datastores)
 >>>>>>> eba13c17e2563a565caa20f2e3b71ca80f0452f7
+=======
+>>>>>>> parent of 60bfc5c... Fixme: finish project soap with php and python
 
 ## Desenvolvimento
 
@@ -54,6 +56,7 @@ O Corba prover a persistência, definindo o Persistent Object Service (POS), par
 ❯ cd websocket-python/
 ❯ python3 -m venv .websocket
 ❯ source .websocket/bin/activate (linux) ou .websocket\Scripts\activate (windows)
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 ❯ python client.py
@@ -63,15 +66,23 @@ O Corba prover a persistência, definindo o Persistent Object Service (POS), par
 ❯ python3 server.p
 ❯ python3 client.py
 >>>>>>> eba13c17e2563a565caa20f2e3b71ca80f0452f7
+=======
+❯ python3 server.py
+❯ python3 client.py
+>>>>>>> parent of 60bfc5c... Fixme: finish project soap with php and python
   # http://127.0.0.1/
-  # sending messages...
+  # escreva uma mensagem...
 ```
 <<<<<<< HEAD
 
 ## Links
 
+<<<<<<< HEAD
 - [SOAP wiki](https://pt.wikipedia.org/wiki/SOAP)
 - [PIP SOAP](https://pypi.org/project/SOAPpy/#using-github)
 - [API Github](https://api.github.com/)
 =======
 >>>>>>> eba13c17e2563a565caa20f2e3b71ca80f0452f7
+=======
+- [link](#)
+>>>>>>> parent of 60bfc5c... Fixme: finish project soap with php and python
