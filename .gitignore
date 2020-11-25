@@ -1,1 +1,8 @@
+<<<<<<< HEAD
 .websocket/
+=======
+.websocket/
+orb.db/
+omniORB-4.1.6/
+omniORBpy-3.6/
+>>>>>>> eba13c17e2563a565caa20f2e3b71ca80f0452f7

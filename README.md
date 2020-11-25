@@ -2,6 +2,7 @@
 
 > Atividade Referente a Disciplina de Desenvolvimento de Sistemas Distribuídos.
 
+<<<<<<< HEAD
 ## SOAP
 
 SOAP é um protocolo para troca de informações estruturadas em uma plataforma descentralizada e distribuída. Ele se baseia na Linguagem de Marcação Extensível (XML) para seu formato de mensagem, e normalmente baseia-se em outros protocolos da camada de aplicação.
@@ -24,6 +25,28 @@ O SOAP é:
 - mecanismo para lidar com erros,
 - mecanismo de extensão que permite evolução,
 - mecanismo entre as mensagens SOAP e o HTTP, que permite representar tipos de dados em XML.
+=======
+## CORBA
+
+Esclarece e simplifica a troca entre sistemas distribuidos heterogênios, Atuando de modo que os objetos possam se comunicar de forma transparente.
+
+### ORB
+
+Bloco intermediário, responsável por aceitar a requisição do usuário para enviar ao objeto.
+
+### IDL
+
+O Corba utiliza a IDL (baseada em c++), que é puramente declarativa, assim possibilitando acesso a qualquer linguagem.
+
+### Persistência
+
+O Corba prover a persistência, definindo o Persistent Object Service (POS), para ser responsável por armazenar o estado dos estados, utilizando quatro elementos:
+
+- Objetos Persistentes (Persistent Object (POs))
+- Gerenciador de Objetos Persistentes (Persistent Objects Manager (POM))
+- Serviços de Persistência de Dados (Persistent Data Services (PDSs))
+- Base de Dados (Datastores)
+>>>>>>> eba13c17e2563a565caa20f2e3b71ca80f0452f7
 
 ## Desenvolvimento
 
@@ -32,14 +55,23 @@ O SOAP é:
 ❯ python3 -m venv .websocket
 ❯ source .websocket/bin/activate (linux) ou .websocket\Scripts\activate (windows)
 
+<<<<<<< HEAD
 ❯ python client.py
 ❯ python server.php // or runing php http://localhost/fileServer.php
+=======
+❯ orbd -ORBInitialPort 1050 -ORBDInitialHost localhost
+❯ python3 server.p
+❯ python3 client.py
+>>>>>>> eba13c17e2563a565caa20f2e3b71ca80f0452f7
   # http://127.0.0.1/
   # sending messages...
 ```
+<<<<<<< HEAD
 
 ## Links
 
 - [SOAP wiki](https://pt.wikipedia.org/wiki/SOAP)
 - [PIP SOAP](https://pypi.org/project/SOAPpy/#using-github)
 - [API Github](https://api.github.com/)
+=======
+>>>>>>> eba13c17e2563a565caa20f2e3b71ca80f0452f7
