@@ -1,4 +1,8 @@
 .websocket/
+<<<<<<< HEAD
 orb.db/
 omniORB-4.1.6/
 omniORBpy-3.6/
+=======
+githublocation/.env
+>>>>>>> 089f5cb2fac0fa45e042417267c9c5c1fceea9ee
