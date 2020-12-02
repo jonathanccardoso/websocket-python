@@ -27,7 +27,7 @@ SECRET_KEY = 'l0pw+*3!*3&^ff!f7n8&!jnx_bl=-@*z5yy@4e6a%xxahc*amc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1']
 ACCESS_TOKEN = config('ACCESS_TOKEN')
 
 # Application definition

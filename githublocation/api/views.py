@@ -17,39 +17,8 @@ import requests, json, locale
 
 
 class UserViewSet(viewsets.ModelViewSet):
-  """
-  API endpoint that allows users to be viewed or edited.
-  """
   queryset = User.objects.all()
   serializer_class = UserSerializer
-
-  # def get_permissions(self):
-  #   """
-  #   Instantiates and returns the list of permissions
-  #   that this view requires.abs
-  #   """
-  #   permission_classes = [IsAuthenticated]
-  #   return [permission() for permission in permission_classes]
-
-
-# # class GithubViewSet(APIView): only post
-# class GithubViewSet(generics.ListAPIView, generics.RetrieveUpdateDestroyAPIView):
-#   # serializer_class = UserSerializer
-#   serializer_class = UserGithubSerializer
-
-#   # queryset = User.objects.all()
-
-#   # print("queryset ========", type(queryset))
-#   # queryset = ""
-
-#   def get_queryset(self):
-#     username = self.kwargs.get('username')
-#     queryset = requests.get("https://api.github.com/users/" + username)
-#     print("queryset =======", queryset.content)
-
-#     # queryset = super(GithubViewSet, self).get_queryset()
-#     # return queryset.filter(id=1)
-#     return queryset
 
 
 class GithubViewSet(APIView):
