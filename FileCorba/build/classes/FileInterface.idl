@@ -1,4 +1,0 @@
-interface FileInterface {
-    typedef sequence<octet> Data;
-    Data downloadFile(in string fileName);
-};

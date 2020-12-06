@@ -2,26 +2,29 @@
 
 > Atividade Referente a Disciplina de Desenvolvimento de Sistemas Distribuídos.
 
-## SOAP
+## API REST
 
+<<<<<<< HEAD
 ![SOAP](https://upload.wikimedia.org/wikipedia/commons/5/59/SOAP.svg)
+=======
+API REST, também chamada de API RESTful, é uma interface de programação de aplicações que segue conformidade com as restrições da arquitetura REST. A sigla REST significa Representational State Transfer (Transferência Representacional de Estado, em português).
 
-SOAP pode formar a camada base de uma pilha de protocolos de serviços Web, fornecendo um arcabouço básico de mensagens sob o qual se podem construir os serviços Web.
+Uma interface de programação de aplicações (API) é um conjunto de definições e protocolos para criar e integrar softwares de aplicações. Às vezes, as APIs são referidas como um contrato entre um provedor e um usuário de informações, estabelecendo o conteúdo exigido pelo consumidor (a chamada) e o conteúdo exigido pelo produtor (a resposta). Por exemplo, uma API de um serviço meteorológico pode especificar que o usuário forneça um CEP e o produtor responda em duas partes, a primeira contendo a temperatura mais elevada e a segunda com a temperatura mais baixa.
+>>>>>>> 089f5cb2fac0fa45e042417267c9c5c1fceea9ee
 
-Geralmente servidores SOAP são implementados utilizando-se servidores HTTP, embora isto não seja uma restrição para funcionamento do protocolo. As mensagens SOAP são documentos XML que aderem a uma especificação W3C.
+- REST não é um protocolo ou padrão, mas sim um conjunto de princípios de arquitetura. Os desenvolvedores de API podem implementar a arquitetura REST de maneiras variadas.
 
-O primeiro esforço do desenvolvimento do SOAP foi implementar RPCs sobre XML.
+### API GATEWAY
 
-### Definição
+O Amazon API Gateway é um serviço da AWS para criação, publicação, manutenção, monitoramento e proteção de APIs REST e WebSocket em qualquer escala. Os desenvolvedores de APIs podem criar APIs que acessem serviços da AWS ou outros serviços da Web, bem como dados armazenados na Nuvem AWS.
 
-Envelope das mensagens, regras de codificação, convenção RPC, ligação com protocolos subjacentes.
+Como um desenvolvedor de APIs do API Gateway, é possível criar APIs para uso em suas próprias aplicações cliente. Ou você pode disponibilizar suas APIs para desenvolvedores de aplicativos de terceiros. Para obter mais informações, consulte Quem usa o API Gateway?.
 
-O SOAP é:
+O API Gateway cria APIs RESTful que:
 
-- mecanismo para definir a unidade de comunicação,
-- mecanismo para lidar com erros,
-- mecanismo de extensão que permite evolução,
-- mecanismo entre as mensagens SOAP e o HTTP, que permite representar tipos de dados em XML.
+- São baseadas em HTTP.
+- Habilitam a comunicação cliente-servidor sem estado.
+- Implementam os métodos HTTP padrão, como GET, POST, PUT, PATCH e DELETE.
 
 ## Desenvolvimento
 
@@ -29,13 +32,25 @@ O SOAP é:
 ❯ cd websocket-python/
 ❯ python3 -m venv .websocket
 ❯ source .websocket/bin/activate (linux) ou .websocket\Scripts\activate (windows)
+❯ python3 manage.py runserver
+❯ pip freeze > requirements.txt
 
+<<<<<<< HEAD
 ❯ python client.py
 
 // or runing php http://localhost/fileServer.php
 // cat /home/var/www/wordpress/fileServer.php
 ❯ python server.php
+=======
+// open file index.html to application front.
+>>>>>>> 089f5cb2fac0fa45e042417267c9c5c1fceea9ee
 ```
+
+### Endpoints
+
+- http://localhost:8000/api/users/
+- http://localhost:8000/api/user/github/{username}
+- http://localhost:8000/api/user/zipcode/{zipcode}
 
 ## Links
 
