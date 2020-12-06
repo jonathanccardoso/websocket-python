@@ -9,8 +9,7 @@
 
 ```console
 ❯ cd websocket-python/
-❯ python3 -m venv .websocket
-❯ source .websocket/bin/activate (linux) ou .websocket\Scripts\activate (windows)
-❯ python3 manage.py runserver
-❯ pip freeze > requirements.txt
+❯ python consumer.py "#"
+❯ python publisher.py "cumprimento:" "n publisher.py "cumprimento:" "ola mundo"
+❯ pip install pika
 
