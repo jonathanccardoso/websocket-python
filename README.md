@@ -2,8 +2,7 @@
 
 > Atividade Referente a Disciplina de Desenvolvimento de Sistemas Distribuídos.
 
-## API REST
-
+## Fila de Mensagens
 
 
 ## Desenvolvimento
