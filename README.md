@@ -10,6 +10,6 @@
 ```console
 ❯ cd websocket-python/
 ❯ python consumer.py "#"
-❯ python publisher.py "cumprimento:" "n publisher.py "cumprimento:" "ola mundo"
+❯ python publisher.py "cumprimento:" "ola mundo"
 ❯ pip install pika
 
